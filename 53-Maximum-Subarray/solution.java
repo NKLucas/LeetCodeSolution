@@ -1,16 +1,16 @@
-class Solution(object):
-    def maxSubArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        globalMax = nums[0]
-        localMax = nums[0]
-        for value in nums[1:]:
-            if localMax < 0:
-                localMax = 0
-            localMax += value 
-            if localMax > globalMax:
-                globalMax = localMax
-        return globalMax
-        
+public class Solution {
+    public int maxSubArray(int[] nums) {
+        int globalMax = Integer.MIN_VALUE;
+        int localMax = 0;
+        for (int i = 0; i < nums.length; i++){
+            if (localMax < 0){
+                localMax = 0;
+            }
+            localMax += nums[i];
+            if (localMax > globalMax){
+                globalMax = localMax;
+            }
+        }
+        return globalMax;
+    }
+}
