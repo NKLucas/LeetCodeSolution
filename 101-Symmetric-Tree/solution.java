@@ -17,7 +17,7 @@ public class Solution {
     }
     
     private boolean check(TreeNode left, TreeNode right){
-        if (left == right == null){
+        if (left == null && right == null){
             return true;
         }
         if (left == null || right == null){
