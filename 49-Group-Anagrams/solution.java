@@ -1,7 +1,10 @@
 public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
+        // to meet the output requirement, strs need to be sorted.
+        Arrays.sort(strs);
+        
         // This problem requires to write a hash function that make all the anagrams have sam hashcode.
-        List<List<String>> result = new LinkeList<List<String>>();
+        List<List<String>> result = new LinkedList<List<String>>();
         HashMap<Integer, LinkedList<String>> map = new HashMap<>();
         
         // group the strings together based on the designed getHashCode function.
@@ -29,13 +32,12 @@ public class Solution {
     
     private int getHashCode(int[] charCount){
         int a = 33;
-        int b = 31;
+        int b = 5;
         int hashCode = 0;
         for (int c : charCount){
-            
+            hashCode = a * hashCode + c;
+            a = a * b;
         }
+        return hashCode;
     }
-    
-    
-    
 }
