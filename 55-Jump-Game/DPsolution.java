@@ -6,11 +6,11 @@ public class Solution {
             if (canReach[i]) {
                 for(int j = i + nums[i]; j > i; j--){
                     if (j < nums.length){
-                        canReach[i] = true;
+                        canReach[j] = true;
                     }
                 }
             }
         }
-        return canReach[nums.length];
+        return canReach[nums.length - 1];
     }
 }
