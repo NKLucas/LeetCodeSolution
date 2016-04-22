@@ -38,8 +38,8 @@ public class Solution {
     private boolean isValidPos(char[][] grid, int x, int y){
         int rows = grid.length;
         int cols = grid[0].length;
-        boolean xIsValid = (0 <= x && x <= rows);
-        boolean yIsValid = (0 <= y && y <= cols);
+        boolean xIsValid = (0 <= x && x <= rows - 1);
+        boolean yIsValid = (0 <= y && y <= cols - 1);
         return xIsValid && yIsValid;
     }
     
