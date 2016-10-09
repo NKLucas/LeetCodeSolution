@@ -18,18 +18,15 @@ public class Solution {
         int result = 0;
         
         while(!q.isEmpty()) {
-            int size = q.size();
-            for (int i = 0; i < size; i++){
-                TreeNode now = q.poll();
-                if (now.left != null) {
-                    q.offer(now.left);
-                }
-                if (now.right != null) {
-                    q.offer(now.right);
-                }
-                if (now.left != null && now.left.left == null && now.left.right == null){
-                    result += now.left.val;
-                }
+            TreeNode now = q.poll();
+            if (now.left != null) {
+                q.offer(now.left);
+            }
+            if (now.right != null) {
+                q.offer(now.right);
+            }
+            if (now.left != null && now.left.left == null && now.left.right == null){
+                result += now.left.val;
             }
         }
         return result;
